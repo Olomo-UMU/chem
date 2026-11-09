@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Detailed notes on ten laboratory instruments used by mechanical engineers: viscometers, conductivity meters, titrators, Karl Fischer titrators, AAS and ICP-OES, FTIR, gas chromatography with dissolved gas analysis, thermogravimetric analysis and DSC, potentiostats, and salt spray cabinets. Principles, procedures, typical results, and uses in industry and research.">
+<title>Laboratory Instruments in Detail</title>
+<link rel="stylesheet" href="assets/notes.css">
+<style>.pick{display:inline-flex;gap:8px;align-items:center;font-size:13.5px;margin-right:14px}.pick select{width:auto;min-width:150px}</style>
+</head>
+<body>
+<nav class="sitebar" aria-label="Site"><a href="../">All labs</a><a href="index.html">Chemistry for mechanical engineers</a><a href="instruments.html" aria-current="page">Laboratory instruments in detail</a></nav>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Companion notes to the chemistry lecture, section 8 in depth</div>
+  <h1>Laboratory Instruments in Detail</h1>
+  <p>Ten instruments a mechanical engineer meets in the lab or in a test report. For each: how it works, the standard procedure, the results you should expect for common samples, and how it is used in industry and in research. Interactive figures let you run the calculations and read the plots yourself.</p>
+</header>
+<div class="layout">
+<nav class="toc" aria-label="On this page"><ol>
+  <li><a href="#s1"><span class="n">1</span>Viscometers</a></li>
+  <li><a href="#s2"><span class="n">2</span>Conductivity meter</a></li>
+  <li><a href="#s3"><span class="n">3</span>Titration</a></li>
+  <li><a href="#s4"><span class="n">4</span>Karl Fischer titrator</a></li>
+  <li><a href="#s5"><span class="n">5</span>AAS and ICP-OES</a></li>
+  <li><a href="#s6"><span class="n">6</span>FTIR spectrometer</a></li>
+  <li><a href="#s7"><span class="n">7</span>Gas chromatograph</a></li>
+  <li><a href="#s8"><span class="n">8</span>TGA and DSC</a></li>
+  <li><a href="#s9"><span class="n">9</span>Potentiostat</a></li>
+  <li><a href="#s10"><span class="n">10</span>Salt spray cabinet</a></li>
+  <li><a href="#quiz"><span class="n">✓</span>Check yourself</a></li>
+  <li><a href="#refs"><span class="n"></span>References</a></li>
+</ol></nav>
+<main>
+
+<!-- 1 viscometers -->
+<section class="sec prose" id="s1"><h2><span class="n">1</span>Viscometers</h2>
+<h3>Principle</h3>
+<p>Viscosity is a fluid's resistance to shear, and it is the single most important property of a lubricant: it sets the thickness of the oil film in bearings and gears. Two quantities are used. <b>Dynamic viscosity</b> η (mPa⋅s, or centipoise) is shear stress divided by shear rate. <b>Kinematic viscosity</b> ν = η/ρ (mm²/s, or centistokes) is what gravity-driven instruments measure and what oil grades are based on.</p>
+<div class="eq"><div>Glass capillary: ν = C t, &nbsp; η = ν ρ &nbsp;&nbsp; Viscosity–temperature (ASTM D341): log log(ν + 0.7) = A − B log T</div><div class="w">C is the tube's calibration constant (mm²/s²) and t the flow time between two marks. T is absolute temperature. Two measured points fix A and B, so viscosity at any operating temperature can be read off a straight line on the special D341 chart. The viscosity index (VI, ASTM D2270) expresses how flat that line is: higher VI means less thinning when hot.</div></div>
+<h3>Types of viscometer</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Type</th><th>How it works</th><th>Best for</th></tr></thead><tbody>
+<tr><td>Glass capillary (Ubbelohde, Cannon–Fenske)</td><td>Time for a fixed volume to flow through a capillary under gravity, in a bath held to ±0.02 °C</td><td>Reference kinematic viscosity of oils and fuels (ASTM D445, ISO 3104)</td></tr>
+<tr><td>Rotational (Brookfield type)</td><td>Torque needed to turn a spindle at set speed</td><td>Greases, paints, slurries, non-Newtonian fluids</td></tr>
+<tr><td>Stabinger (rotating tube)</td><td>Rotational measurement in a heated cell with built-in density</td><td>Fast η, ν and density together (ASTM D7042)</td></tr>
+<tr><td>Cone-and-plate rheometer</td><td>Controlled shear rate or stress over a range</td><td>Research: shear thinning, yield stress, viscoelasticity</td></tr>
+<tr><td>Falling ball</td><td>Terminal velocity of a ball (Stokes' law)</td><td>Transparent Newtonian liquids, teaching</td></tr>
+</tbody></table></div>
+<h3>Procedure: kinematic viscosity by ASTM D445</h3>
+<ol><li>Choose a calibrated capillary whose flow time will be at least 200 s.</li>
+<li>Filter the sample if it contains particles; charge the viscometer to the fill marks.</li>
+<li>Mount it vertically in the bath at 40.00 °C or 100.00 °C and wait about 30 minutes for it to reach temperature.</li>
+<li>Draw the liquid above the upper mark, release it, and time the meniscus between the two marks.</li>
+<li>Repeat; the two flow times must agree within the method's determinability (about 0.2 to 0.4% for clean oils).</li>
+<li>Calculate ν = C t from the mean time and report it to four significant figures with the temperature.</li></ol>
+<div class="panel"><div class="ph"><h4>Viscosity at operating temperature (ASTM D341)</h4><span class="sub" id="vt_sub"></span></div>
+  <div class="figrow"><canvas class="cv" id="vt" aria-label="Kinematic viscosity against temperature on a log scale"></canvas><canvas class="cv" id="vt_c" aria-label="Viscosity change of a used oil against alarm limits"></canvas></div>
+  <div class="controls" id="vt_c2"></div><div class="stats" id="vt_st"></div></div>
+<h3>Typical results</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Sample</th><th>Typical value</th><th>Note</th></tr></thead><tbody>
+<tr><td>Water at 20 °C</td><td>1.00 mm²/s (η = 1.00 mPa⋅s)</td><td>Check fluid for teaching rigs</td></tr>
+<tr><td>Diesel fuel (EN 590)</td><td>2.0 to 4.5 mm²/s at 40 °C</td><td>Too low wears injection pumps; too high spoils atomisation</td></tr>
+<tr><td>Hydraulic oil ISO VG 46</td><td>41.4 to 50.6 mm²/s at 40 °C</td><td>ISO VG grades allow ±10% about the nominal value</td></tr>
+<tr><td>Turbine / compressor oil ISO VG 68</td><td>61.2 to 74.8 mm²/s at 40 °C</td><td></td></tr>
+<tr><td>Industrial gear oil ISO VG 220</td><td>198 to 242 mm²/s at 40 °C</td><td></td></tr>
+<tr><td>Engine oil SAE 15W-40</td><td>12.5 to below 16.3 mm²/s at 100 °C</td><td>SAE J300 grade limits; VI typically 130 to 140</td></tr>
+<tr><td>Used oil alarm limits</td><td>±10% caution, ±20% critical (versus new oil)</td><td>Common condition-monitoring practice; rise suggests oxidation or soot, fall suggests fuel dilution or wrong oil</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: lubricant selection and acceptance testing, used-oil condition monitoring in fleets, mines and power stations, fuel quality control, paint and adhesive production, food processing.</li>
+<li><b>Research</b>: new lubricants and bio-based oils, nanofluids for heat transfer, rheology of 3D-printing pastes and concrete, elastohydrodynamic film modelling (which needs pressure–viscosity data).</li>
+<li><b>Errors</b>: temperature (viscosity of oil changes 5 to 7% per °C near 40 °C), air bubbles, particles blocking the capillary, a tube not vertical, timing by eye.</li></ul>
+</section>
+
+<!-- 2 conductivity -->
+<section class="sec prose" id="s2"><h2><span class="n">2</span>Conductivity meter</h2>
+<h3>Principle</h3>
+<p>Dissolved salts, acids and bases carry current as ions, so electrical conductivity is a quick, cheap measure of how much dissolved material water contains. The meter applies an alternating voltage (to avoid polarising the electrodes) across a cell of known geometry and measures the conductance G.</p>
+<div class="eq"><div>κ = G K<sub>cell</sub>, &nbsp; κ<sub>25</sub> = κ<sub>T</sub>/[1 + α(T − 25)], &nbsp; TDS ≃ k κ<sub>25</sub></div><div class="w">K<sub>cell</sub> (cm⁻¹) is the cell constant: 0.01 to 0.1 for pure water, 1 for ordinary waters, 10 for brines. α is about 2%/°C for most natural waters, so readings are always reported at 25 °C. The factor k converting μS/cm to mg/L of total dissolved solids is about 0.55 to 0.75 depending on the salts present (0.64 is common).</div></div>
+<h3>Procedure</h3>
+<ol><li>Choose a cell constant suited to the expected range.</li>
+<li>Calibrate with a certified KCl standard, for example 0.01 mol/L KCl = 1,413 μS/cm at 25 °C; for pure water use a low-range standard or a factory-calibrated flow cell.</li>
+<li>Rinse the cell with the sample, immerse it with no trapped air, and let the temperature stabilise.</li>
+<li>Read the temperature-compensated value; for high-purity water measure in a closed flow cell, because carbon dioxide from the air raises the reading within seconds.</li>
+<li>For steam plant, measure <b>cation conductivity</b> after a hydrogen-form cation exchange column, which removes ammonia and amines so that only harmful anions (chloride, sulfate) are seen.</li></ol>
+<div class="panel"><div class="ph"><h4>Temperature compensation and water quality</h4><span class="sub" id="cd_sub"></span></div>
+  <canvas class="cv" id="cd" aria-label="Conductivity scale with typical waters and the current sample"></canvas>
+  <div class="controls" id="cd_c"></div><div class="stats" id="cd_st"></div></div>
+<h3>Typical results at 25 °C</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Water</th><th>Conductivity</th></tr></thead><tbody>
+<tr><td>Ultrapure water (theoretical)</td><td>0.055 μS/cm (18.2 MΩ⋅cm)</td></tr>
+<tr><td>High-pressure boiler feedwater, cation conductivity</td><td>below about 0.2 μS/cm</td></tr>
+<tr><td>Distilled or deionised water, exposed to air</td><td>0.5 to 3 μS/cm</td></tr>
+<tr><td>Rain water</td><td>5 to 30 μS/cm</td></tr>
+<tr><td>Drinking water</td><td>50 to 800 μS/cm</td></tr>
+<tr><td>Cooling tower water (concentrated)</td><td>1,000 to 5,000 μS/cm</td></tr>
+<tr><td>Seawater (salinity 35)</td><td>about 53,000 μS/cm</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: boiler blowdown control, condenser leak detection in power stations, cooling tower cycles of concentration, reverse osmosis and demineraliser performance, clean-in-place rinsing.</li>
+<li><b>Research</b>: electrolyte development for batteries and fuel cells, corrosion studies (conductive waters corrode faster), groundwater and environmental monitoring, soil salinity.</li>
+<li><b>Errors</b>: wrong temperature coefficient, polarised or fouled electrodes, air bubbles, CO<sub>2</sub> absorption in pure water, a cell constant that is out of range.</li></ul>
+</section>
+
+<!-- 3 titration -->
+<section class="sec prose" id="s3"><h2><span class="n">3</span>Titration</h2>
+<h3>Principle</h3>
+<p>A titration adds a reagent of exactly known concentration (the titrant) to a sample until the reaction is just complete, the <b>end point</b>. The volume used gives the amount of the substance. The end point is found by a colour indicator or, in automatic titrators, by an electrode: the potential changes fastest at the equivalence point, so the instrument finds the maximum of dE/dV.</p>
+<div class="eq"><div>Base number: TBN = (V − V<sub>blank</sub>) N × 56.1 / m &nbsp; mg KOH/g &nbsp;&nbsp; Hardness: mg/L as CaCO<sub>3</sub> = V<sub>EDTA</sub> M × 100,090 / V<sub>sample</sub></div><div class="w">V in mL, N the acid normality, m the sample mass in g, 56.1 the molar mass of KOH. For hardness, M is EDTA molarity and 100,090 mg/mol converts calcium-equivalent moles to mg of CaCO<sub>3</sub>.</div></div>
+<h3>Common titrations for engineers</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Test</th><th>Titrant and detection</th><th>What it tells you</th></tr></thead><tbody>
+<tr><td>Total base number, TBN (ASTM D2896, D4739)</td><td>Perchloric or hydrochloric acid, potentiometric</td><td>Reserve alkalinity of engine oil to neutralise acids from combustion</td></tr>
+<tr><td>Total acid number, TAN (ASTM D664)</td><td>Alcoholic KOH, potentiometric</td><td>Acids from oil oxidation; rising TAN means the oil is ageing</td></tr>
+<tr><td>Total hardness</td><td>EDTA, Eriochrome Black T at pH 10 (wine red to blue)</td><td>Calcium and magnesium that form boiler scale</td></tr>
+<tr><td>Alkalinity (P and M)</td><td>Sulfuric acid to pH 8.3 and 4.5</td><td>Boiler water conditioning, scaling tendency</td></tr>
+<tr><td>Chloride</td><td>Silver nitrate (Mohr, or potentiometric)</td><td>Corrosiveness of water; salt contamination</td></tr>
+</tbody></table></div>
+<h3>Procedure: potentiometric TBN</h3>
+<ol><li>Weigh the oil sample (typically 1 to 5 g, less for high-TBN marine oils) into the titration beaker.</li>
+<li>Dissolve it in the specified solvent mixture and immerse the cleaned glass and reference electrodes.</li>
+<li>Titrate with standardised acid while the titrator records potential against volume, adding smaller increments near the end point.</li>
+<li>The instrument locates the inflection; run a blank on the solvent alone and subtract it.</li>
+<li>Standardise the titrant regularly against a primary standard and check the electrode response with buffers.</li></ol>
+<div class="panel"><div class="ph"><h4>Potentiometric titration curve and end point</h4><span class="sub" id="tt_sub"></span></div>
+  <div class="figrow"><canvas class="cv" id="tt" aria-label="Electrode potential against titrant volume"></canvas><canvas class="cv" id="tt_d" aria-label="First derivative of the titration curve"></canvas></div>
+  <div class="controls" id="tt_c"></div><div class="stats" id="tt_st"></div></div>
+<h3>Typical results</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Sample</th><th>Typical value</th></tr></thead><tbody>
+<tr><td>New diesel engine oil TBN</td><td>8 to 15 mg KOH/g; condemn at about half the new value, or when TBN falls to TAN</td></tr>
+<tr><td>Marine cylinder oil TBN</td><td>40 to 100 mg KOH/g (for high-sulfur fuel)</td></tr>
+<tr><td>New turbine or hydraulic oil TAN</td><td>0.05 to 0.2 mg KOH/g; investigate a rise of about 0.3 to 0.5 above new</td></tr>
+<tr><td>Water hardness (as CaCO<sub>3</sub>)</td><td>soft below 60 mg/L, moderately hard 61 to 120, hard 121 to 180, very hard above 180</td></tr>
+<tr><td>Boiler feedwater hardness</td><td>effectively zero (below about 1 mg/L) for most steam boilers</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: oil drain-interval decisions for engines and ships, water treatment dosing, quality control of acids, alkalis and plating baths.</li>
+<li><b>Research</b>: lubricant additive depletion, biodiesel acid value and stability, electrolyte concentration, degradation of transformer oils.</li>
+<li><b>Errors</b>: unstandardised titrant, dirty or slow electrodes, overshooting the end point, CO<sub>2</sub> absorbed by alkaline titrants, sample not fully dissolved.</li></ul>
+</section>
+
+<!-- 4 Karl Fischer -->
+<section class="sec prose" id="s4"><h2><span class="n">4</span>Karl Fischer titrator</h2>
+<h3>Principle</h3>
+<p>Water is the commonest contaminant in oils and fuels: it causes rust, breaks down additives, promotes microbial growth in fuel and lowers the dielectric strength of transformer oil. The Karl Fischer reaction consumes water exactly in a 1 : 1 ratio with iodine:</p>
+<div class="eq"><div>I<sub>2</sub> + SO<sub>2</sub> + H<sub>2</sub>O + 3RN + CH<sub>3</sub>OH ⟶ 2RNH⁺I⁻ + RNH⁺CH<sub>3</sub>SO<sub>4</sub>⁻ &nbsp;&nbsp; coulometric: 10.71 C of charge per mg of water</div><div class="w">In the <b>volumetric</b> method, iodine-containing reagent is added from a burette (range about 100 ppm to 100%). In the <b>coulometric</b> method, iodine is generated electrically at an anode, and Faraday's law gives the water directly from the charge: 2 × 96,485 C per 18.015 g of water. It reaches 1 ppm and needs no titrant standardisation, so it is the standard for oils (ASTM D6304). Oils with additives that react with the reagent are heated in an oven and the water is carried into the cell by dry gas.</div></div>
+<h3>Procedure: coulometric, ASTM D6304</h3>
+<ol><li>Fill the cell with fresh anolyte and catholyte and let the instrument titrate the cell dry; wait for a low, stable drift (typically below 10 to 20 μg/min).</li>
+<li>Shake the sample thoroughly (water settles), draw it into a dry syringe and weigh the syringe.</li>
+<li>Inject through the septum below the liquid surface and reweigh the syringe to get the sample mass by difference.</li>
+<li>The instrument generates iodine until the indicator electrode shows excess, and reports water corrected for drift.</li>
+<li>Check the system with a certified water standard; replace reagent when it is exhausted or the drift will not settle.</li></ol>
+<details class="ex" id="ex1"></details>
+<h3>Typical results</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Sample</th><th>Typical water content</th></tr></thead><tbody>
+<tr><td>New mineral hydraulic or turbine oil</td><td>50 to 150 ppm</td></tr>
+<tr><td>Saturation of mineral oil at room temperature</td><td>about 200 to 400 ppm (oil turns cloudy above it)</td></tr>
+<tr><td>Hydraulic and turbine oil in service</td><td>alarm commonly at 200 to 500 ppm, depending on the system</td></tr>
+<tr><td>Engine oil</td><td>above about 0.1 to 0.2% (1,000 to 2,000 ppm) suggests a coolant or condensation problem</td></tr>
+<tr><td>Diesel fuel (EN 590 limit)</td><td>200 mg/kg maximum</td></tr>
+<tr><td>Transformer mineral oil in service</td><td>usually kept below about 20 to 30 mg/kg, lower for higher voltage classes (IEC 60422)</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: oil condition monitoring, transformer maintenance, fuel acceptance, pharmaceuticals and plastics (water causes hydrolysis of PET and nylon during moulding).</li>
+<li><b>Research</b>: water ingress in seals and bearings, ageing of transformer insulation (water in paper and oil), hygroscopic bio-lubricants, battery electrolytes (lithium cells need below about 20 ppm).</li>
+<li><b>Errors</b>: unrepresentative sample (water settles or clings to walls), moisture from air or wet syringes, side reactions with additives, exhausted reagent, high drift.</li></ul>
+</section>
+
+<!-- 5 AAS ICP -->
+<section class="sec prose" id="s5"><h2><span class="n">5</span>AAS and ICP-OES spectrometers</h2>
+<h3>Principle</h3>
+<p>Both measure metals by the light that free atoms absorb or emit at wavelengths unique to each element. In <b>atomic absorption spectroscopy</b> (AAS), the sample is sprayed into a flame (or dried and atomised in a graphite furnace) and light from a lamp made of the element being measured passes through it; absorbance follows the Beer–Lambert law. In <b>inductively coupled plasma optical emission spectroscopy</b> (ICP-OES), the sample enters an argon plasma at about 6,000 to 10,000 K, every element emits its own lines, and a spectrometer measures dozens at once. ICP-MS separates ions by mass instead and reaches parts per trillion.</p>
+<div class="tablewrap"><table class="t"><thead><tr><th></th><th>Flame AAS</th><th>Graphite furnace AAS</th><th>ICP-OES</th><th>ICP-MS</th></tr></thead><tbody>
+<tr><td>Elements per run</td><td>one</td><td>one</td><td>20 to 70 together</td><td>most of the periodic table</td></tr>
+<tr><td>Typical detection limits</td><td>0.01 to 1 mg/L</td><td>0.1 to 10 μg/L</td><td>1 to 50 μg/L</td><td>0.001 to 0.1 μg/L</td></tr>
+<tr><td>Cost and skill</td><td>low</td><td>moderate</td><td>moderate to high</td><td>high</td></tr>
+</tbody></table></div>
+<h3>Procedure: wear metals in used oil by ICP-OES (ASTM D5185)</h3>
+<ol><li>Shake the sample well; dilute a weighed amount (typically 1 : 10) in kerosene or xylene with an internal standard such as yttrium or cobalt.</li>
+<li>Calibrate with oil-based multi-element standards (for example 0, 10, 50, 100 mg/kg) and a blank.</li>
+<li>Aspirate samples; the instrument measures each element's emission lines and corrects with the internal standard for viscosity and nebuliser effects.</li>
+<li>Run a check standard every 10 to 20 samples; recalibrate if it drifts beyond about ±5 to 10%.</li>
+<li>Report mg/kg (ppm) for each element and compare with previous samples from the same machine.</li></ol>
+<p class="note">Spectrometric oil analysis sees only small particles (below about 5 to 10 μm). Large wear debris from a failing gear or bearing can be missed, so programmes add particle counting, ferrography or a magnetic plug.</p>
+<div class="panel"><div class="ph"><h4>Oil analysis trend for a diesel engine</h4><span class="sub" id="oa_sub"></span></div>
+  <div class="btnrow"><span class="seg" id="oa_seg" role="group" aria-label="Scenario"><button type="button" data-v="normal" aria-pressed="true">Normal wear</button><button type="button" data-v="dirt">Dirt ingress</button><button type="button" data-v="coolant">Coolant leak</button><button type="button" data-v="bearing">Bearing wear</button></span></div>
+  <div class="figrow"><canvas class="cv" id="oa" aria-label="Element concentrations over successive oil samples"></canvas><canvas class="cv" id="oa_b" aria-label="Latest sample against alarm limits"></canvas></div>
+  <p class="note" id="oa_st" style="margin:12px 14px"></p></div>
+<h3>What the elements mean in engine oil</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Element</th><th>Likely source</th><th>Indicative caution level in a diesel engine</th></tr></thead><tbody>
+<tr><td>Iron (Fe)</td><td>cylinder liners, crankshaft, gears, rust</td><td>about 50 to 100 ppm</td></tr>
+<tr><td>Chromium (Cr)</td><td>piston rings</td><td>about 10 ppm</td></tr>
+<tr><td>Aluminium (Al)</td><td>pistons, bearings, also dirt</td><td>about 15 to 20 ppm</td></tr>
+<tr><td>Copper (Cu), lead (Pb), tin (Sn)</td><td>bearings, bushings, oil cooler</td><td>Cu about 30, Pb about 30, Sn about 10 ppm</td></tr>
+<tr><td>Silicon (Si)</td><td>dirt (silica) from a damaged air filter; also antifoam additive</td><td>about 15 to 25 ppm</td></tr>
+<tr><td>Sodium (Na), potassium (K)</td><td>glycol coolant inhibitors</td><td>an increase of about 20 ppm over new oil</td></tr>
+<tr><td>Zinc, phosphorus, calcium, magnesium, molybdenum</td><td>oil additives</td><td>a change from the new-oil value means mixed or wrong oil</td></tr>
+</tbody></table></div>
+<p>These are indicative only: limits depend on the engine make, oil, hours on the oil and duty, and laboratories set them statistically from each fleet's history. The trend matters more than any single value.</p>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: condition monitoring of engines, gearboxes, turbines and hydraulics in mining, aviation, rail, shipping and power; trace metals in drinking water and effluent; alloy and coating composition; catalyst and fuel analysis (vanadium, nickel, sodium in heavy fuel oil).</li>
+<li><b>Research</b>: wear mechanisms in tribology tests, leaching from materials, battery recycling (lithium, cobalt, nickel recovery), heavy metals in soils and in biochar, nanoparticle dissolution.</li>
+<li><b>Errors</b>: matrix and viscosity effects, spectral interferences between lines, particles too large to atomise, contamination from containers, poor sample shaking.</li></ul>
+</section>
+
+<!-- 6 FTIR -->
+<section class="sec prose" id="s6"><h2><span class="n">6</span>FTIR spectrometer</h2>
+<h3>Principle</h3>
+<p>Chemical bonds vibrate at characteristic frequencies and absorb infrared light at those frequencies. A Fourier transform infrared (FTIR) spectrometer passes broadband infrared through the sample via a moving-mirror interferometer and converts the interferogram into a spectrum by Fourier transform. Peaks are reported in wavenumbers (cm⁻¹, from about 4,000 to 400). With an <b>attenuated total reflectance</b> (ATR) crystal, solids and liquids are simply pressed onto the crystal with no preparation.</p>
+<h3>Procedure: identifying a polymer by ATR-FTIR</h3>
+<ol><li>Clean the ATR crystal with solvent and record a background spectrum of the clean crystal.</li>
+<li>Press the sample firmly onto the crystal with the clamp; for a moulded part, cut a fresh surface.</li>
+<li>Collect the spectrum (typically 16 to 32 scans at 4 cm⁻¹ resolution).</li>
+<li>Identify the main peaks and compare with a reference library; the software gives a match quality.</li>
+<li>For in-service oil (ASTM E2412), use a transmission cell of fixed path length and compare against the new oil's spectrum.</li></ol>
+<div class="panel"><div class="ph"><h4>Identify the unknown polymer</h4><span class="sub" id="ir_sub"></span></div>
+  <div class="btnrow"><label class="pick">Show spectrum of <select id="ir_s"></select></label><button type="button" id="ir_new">New unknown</button><label class="pick">My answer <select id="ir_a"></select></label><button type="button" id="ir_chk">Check</button></div>
+  <canvas class="cv" id="ir" aria-label="Infrared absorbance spectrum against wavenumber"></canvas>
+  <div class="stats" id="ir_st"></div></div>
+<h3>Typical results: characteristic bands</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Material or change</th><th>Key bands (cm⁻¹)</th></tr></thead><tbody>
+<tr><td>Polyethylene (PE)</td><td>2915 and 2848 (C–H stretch), 1470 and 1462, 730 and 718</td></tr>
+<tr><td>Polypropylene (PP)</td><td>2950, 2915, 2838, 1455, 1376 (methyl group)</td></tr>
+<tr><td>PET (polyester)</td><td>1712 (C=O), 1240, 1095, 723</td></tr>
+<tr><td>Nylon 6 (polyamide)</td><td>3298 (N–H), 1635 (amide I), 1538 (amide II)</td></tr>
+<tr><td>PVC</td><td>1427, 1254, 960, 690 and 615 (C–Cl)</td></tr>
+<tr><td>Oil oxidation</td><td>growing carbonyl band near 1710 to 1720</td></tr>
+<tr><td>Nitration and sulfation in engine oil</td><td>near 1630 and near 1150</td></tr>
+<tr><td>Water in oil; glycol coolant</td><td>broad band near 3400; bands near 1080 and 880</td></tr>
+<tr><td>Soot in engine oil</td><td>raised baseline near 2000</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: incoming material checks (is this the plastic we ordered?), failure analysis of seals, coatings and adhesives, oil condition monitoring, identifying contaminants and residues on parts before bonding or painting.</li>
+<li><b>Research</b>: polymer degradation and weathering, curing of epoxies and composites, surface chemistry of functionalised fibres, biomass and biochar characterisation, CO<sub>2</sub> capture sorbents.</li>
+<li><b>Errors</b>: poor contact with the ATR crystal, an old background, water vapour and CO<sub>2</sub> peaks from the room, saturated (too strong) bands in transmission cells.</li></ul>
+</section>
+
+<!-- 7 GC -->
+<section class="sec prose" id="s7"><h2><span class="n">7</span>Gas chromatograph</h2>
+<h3>Principle</h3>
+<p>A gas chromatograph separates a mixture by carrying it in an inert gas (helium, hydrogen or nitrogen) through a long, thin column whose coating holds each component back by a different amount. Components leave at different <b>retention times</b>, which identify them, and the area of each peak gives the amount. Common detectors are the <b>flame ionisation detector</b> (FID), very sensitive to hydrocarbons, and the <b>thermal conductivity detector</b> (TCD), which responds to every gas including H<sub>2</sub>, O<sub>2</sub>, N<sub>2</sub>, CO and CO<sub>2</sub>. Coupled to a mass spectrometer (GC-MS) it identifies unknowns.</p>
+<div class="eq"><div>Resolution R<sub>s</sub> = 2(t<sub>R2</sub> − t<sub>R1</sub>)/(w<sub>1</sub> + w<sub>2</sub>), &nbsp; amount<sub>i</sub> = RF<sub>i</sub> × Area<sub>i</sub></div><div class="w">R<sub>s</sub> ≥ 1.5 means baseline separation. Response factors RF come from calibration gases of certified composition.</div></div>
+<h3>Procedure: natural gas analysis (ISO 6974) and dissolved gas analysis (IEC 60567)</h3>
+<ol><li>Condition the column and check the baseline; inject a certified calibration gas and confirm retention times and response factors.</li>
+<li>For gas: purge the sample loop with sample gas and inject a fixed volume through a gas sampling valve.</li>
+<li>For transformer oil: sample oil into a gas-tight syringe without air, extract the dissolved gases (headspace or vacuum), then inject them.</li>
+<li>Integrate the peaks; calculate each component's concentration; run a duplicate.</li>
+<li>For natural gas, compute calorific value, Wobbe index and density from the composition (ISO 6976).</li></ol>
+<h3>Dissolved gas analysis: diagnosing transformer faults</h3>
+<p>Electrical and thermal faults inside an oil-filled transformer break down the oil and produce characteristic gases. Their relative proportions point to the fault type. The <b>Duval triangle</b> (IEC 60599) uses the relative percentages of methane, ethylene and acetylene.</p>
+<div class="panel"><div class="ph"><h4>Duval triangle 1</h4><span class="sub" id="dv_sub"></span></div>
+  <div class="figrow"><canvas class="cv" id="dv" aria-label="Duval triangle with fault zones and the sample point"></canvas><canvas class="cv" id="dv_g" aria-label="Simulated chromatogram of the dissolved gases"></canvas></div>
+  <div class="controls" id="dv_c"></div><div class="stats" id="dv_st"></div></div>
+<h3>Typical results</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Sample</th><th>Typical composition</th></tr></thead><tbody>
+<tr><td>Pipeline natural gas (mol%)</td><td>methane 85 to 97, ethane 2 to 8, propane 0.2 to 2, nitrogen 0.5 to 5, CO<sub>2</sub> 0 to 2.5</td></tr>
+<tr><td>Biogas</td><td>methane 50 to 70%, CO<sub>2</sub> 30 to 50%, with H<sub>2</sub>S and moisture</td></tr>
+<tr><td>Transformer oil, healthy</td><td>a few to tens of ppm each of H<sub>2</sub>, CH<sub>4</sub>, C<sub>2</sub>H<sub>6</sub>, C<sub>2</sub>H<sub>4</sub>; essentially no C<sub>2</sub>H<sub>2</sub></td></tr>
+<tr><td>Transformer with arcing</td><td>acetylene present and rising; even a few ppm of C<sub>2</sub>H<sub>2</sub> is a warning</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: natural gas custody transfer and billing, refinery and fuel quality, transformer condition monitoring, emissions testing (VOCs), food and pharmaceutical quality.</li>
+<li><b>Research</b>: combustion and pyrolysis product analysis, gasification syngas composition, catalysis, battery gassing and electrolyte decomposition, hydrogen blending in gas networks.</li>
+<li><b>Errors</b>: leaks and air in the sample, condensation of heavy components, column overload, drifting retention times, wrong response factors, peaks that overlap.</li></ul>
+</section>
+
+<!-- 8 TGA DSC -->
+<section class="sec prose" id="s8"><h2><span class="n">8</span>Thermogravimetric analysis and DSC</h2>
+<h3>Principle</h3>
+<p>A <b>thermogravimetric analyser</b> (TGA) weighs a few milligrams of sample on a microbalance while a furnace heats it on a programme, in nitrogen or air. Steps in the mass curve show moisture leaving, volatile matter driven off, and finally combustion of carbon, leaving ash. A <b>differential scanning calorimeter</b> (DSC) measures the heat flow into a sample compared with an empty reference pan, revealing melting, crystallisation, glass transition and curing reactions.</p>
+<div class="eq"><div>Fixed carbon = 100 − moisture − volatile matter − ash &nbsp;&nbsp; Crystallinity X<sub>c</sub> = ΔH<sub>m</sub>/ΔH<sub>m</sub><sup>0</sup></div><div class="w">ΔH<sub>m</sub><sup>0</sup>, the melting enthalpy of a 100% crystalline polymer, is about 293 J/g for polyethylene, 207 J/g for polypropylene and 140 J/g for PET.</div></div>
+<h3>Procedure: proximate analysis of a fuel by TGA (after ASTM D7582)</h3>
+<ol><li>Grind the sample to below about 250 μm and weigh 10 to 20 mg (micro-TGA) or about 1 g (macro-TGA) into a crucible.</li>
+<li>Heat in nitrogen to about 107 °C and hold until the mass is constant: the loss is <b>moisture</b>.</li>
+<li>Heat in nitrogen to 900 to 950 °C and hold: the further loss is <b>volatile matter</b>.</li>
+<li>Cool to about 600 to 750 °C and switch to air or oxygen: the carbon burns; the remaining mass is <b>ash</b>.</li>
+<li>Fixed carbon is the difference. Run duplicates; calibrate the balance and temperature with reference materials.</li></ol>
+<div class="panel"><div class="ph"><h4>TGA proximate analysis</h4><span class="sub" id="tg_sub"></span></div>
+  <div class="btnrow"><span class="seg" id="tg_seg" role="group" aria-label="Fuel"><button type="button" data-v="coal" aria-pressed="true">Bituminous coal</button><button type="button" data-v="wood">Wood</button><button type="button" data-v="bagasse">Sugarcane bagasse</button><button type="button" data-v="char">Charcoal</button></span></div>
+  <div class="figrow"><canvas class="cv" id="tg" aria-label="Sample mass against time with the temperature programme"></canvas><canvas class="cv" id="tg_d" aria-label="Rate of mass loss"></canvas></div>
+  <div class="stats" id="tg_st"></div></div>
+<h3>Typical results</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>Material</th><th>Moisture</th><th>Volatile matter</th><th>Ash</th><th>Fixed carbon</th></tr></thead><tbody>
+<tr><td>Bituminous coal</td><td>2 to 15%</td><td>20 to 40%</td><td>5 to 15%</td><td>45 to 65%</td></tr>
+<tr><td>Wood (air dry)</td><td>8 to 15%</td><td>70 to 80%</td><td>0.5 to 2%</td><td>12 to 20%</td></tr>
+<tr><td>Sugarcane bagasse (dry basis)</td><td>–</td><td>75 to 85%</td><td>2 to 6%</td><td>10 to 18%</td></tr>
+<tr><td>Wood charcoal</td><td>3 to 8%</td><td>10 to 25%</td><td>2 to 5%</td><td>70 to 85%</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table class="t"><thead><tr><th>Polymer (DSC)</th><th>Glass transition T<sub>g</sub></th><th>Melting T<sub>m</sub></th></tr></thead><tbody>
+<tr><td>HDPE / LDPE</td><td>about −120 °C</td><td>130 to 135 °C / 105 to 115 °C</td></tr>
+<tr><td>Polypropylene</td><td>about −10 to 0 °C</td><td>160 to 165 °C</td></tr>
+<tr><td>PET</td><td>about 70 to 80 °C</td><td>250 to 260 °C</td></tr>
+<tr><td>Nylon 6</td><td>about 50 °C</td><td>about 220 °C</td></tr>
+<tr><td>Cured epoxy</td><td>typically 100 to 200 °C, depending on cure</td><td>does not melt (thermoset)</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: fuel specification for boilers and kilns, biomass and waste-to-energy plant, polymer grade verification, filler and glass-fibre content of composites, cure checks on adhesives and prepregs.</li>
+<li><b>Research</b>: pyrolysis and combustion kinetics (activation energies from several heating rates), biochar and torrefaction, thermal stability of battery materials and phase-change materials for heat storage.</li>
+<li><b>Errors</b>: sample not representative (heterogeneous fuels), buoyancy drift, too fast a heating rate overlapping steps, oxygen leaking into the nitrogen purge.</li></ul>
+</section>
+
+<!-- 9 potentiostat -->
+<section class="sec prose" id="s9"><h2><span class="n">9</span>Potentiostat</h2>
+<h3>Principle</h3>
+<p>A potentiostat controls the potential of a metal sample (the <b>working electrode</b>) relative to a <b>reference electrode</b> (saturated calomel or silver/silver chloride) and measures the current that flows to a <b>counter electrode</b> (platinum or graphite). Because corrosion is a current, sweeping the potential a little around the free corrosion potential E<sub>corr</sub> reveals the corrosion rate within minutes instead of the months a weight-loss test needs.</p>
+<div class="eq"><div>i = i<sub>corr</sub>[e<sup>2.303(E − E<sub>corr</sub>)/β<sub>a</sub></sup> − e<sup>−2.303(E − E<sub>corr</sub>)/β<sub>c</sub></sup>], &nbsp; i<sub>corr</sub> = B/R<sub>p</sub>, &nbsp; B = β<sub>a</sub>β<sub>c</sub>/[2.303(β<sub>a</sub> + β<sub>c</sub>)]</div><div class="w">β<sub>a</sub> and β<sub>c</sub> are the Tafel slopes (mV per decade). <b>Linear polarisation resistance</b> (LPR, ASTM G59) measures R<sub>p</sub> = ΔE/Δi over ±10 to 20 mV, which does not damage the sample. <b>Tafel extrapolation</b> sweeps ±250 mV and extends the straight parts of log|i| back to E<sub>corr</sub>. <b>Electrochemical impedance spectroscopy</b> (EIS) applies small AC signals over a range of frequencies to study coatings and films. ASTM G102 converts i<sub>corr</sub> to a corrosion rate.</div></div>
+<h3>Procedure: polarisation test</h3>
+<ol><li>Polish the specimen to a standard finish, measure its exposed area, degrease and mount it.</li>
+<li>Fill the cell with the test solution (for example 3.5% NaCl), insert the three electrodes, and record the open-circuit potential until stable (often 30 to 60 minutes).</li>
+<li>Run LPR: sweep from −15 to +15 mV about E<sub>corr</sub> at 0.1 to 0.2 mV/s and take R<sub>p</sub> from the slope at zero current.</li>
+<li>If needed, run a potentiodynamic sweep from −250 mV to +250 mV (or further, to find pitting) on a fresh specimen.</li>
+<li>Fit Tafel slopes, calculate i<sub>corr</sub> and convert it to mm/year; repeat on at least three specimens.</li></ol>
+<div class="panel"><div class="ph"><h4>Polarisation curve and corrosion rate</h4><span class="sub" id="pt_sub"></span></div>
+  <div class="figrow"><canvas class="cv" id="pt" aria-label="Potential against log current density with Tafel lines"></canvas><canvas class="cv" id="pt_l" aria-label="Linear polarisation near the corrosion potential"></canvas></div>
+  <div class="controls" id="pt_c"></div><div class="stats" id="pt_st"></div></div>
+<h3>Typical results</h3>
+<div class="tablewrap"><table class="t"><thead><tr><th>System</th><th>Typical corrosion current density</th></tr></thead><tbody>
+<tr><td>Mild steel in seawater or 3.5% NaCl</td><td>about 5 to 20 μA/cm² (roughly 0.06 to 0.25 mm/year)</td></tr>
+<tr><td>Steel in sound concrete (passive)</td><td>below 0.1 μA/cm²: negligible</td></tr>
+<tr><td>Steel in chloride-contaminated concrete</td><td>0.1 to 0.5 low, 0.5 to 1 moderate, above 1 μA/cm² high corrosion</td></tr>
+<tr><td>Stainless steel 316 in seawater (passive)</td><td>below about 0.1 μA/cm², until pitting starts</td></tr>
+<tr><td>Typical Tafel slopes</td><td>60 to 120 mV/decade; B ≃ 26 mV for actively corroding steel, ≃ 52 mV for passive steel</td></tr>
+</tbody></table></div>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: corrosion monitoring probes in pipelines, cooling water and refineries, inhibitor selection, cathodic protection surveys, coating quality checks by EIS.</li>
+<li><b>Research</b>: new alloys and coatings, inhibitors from plant extracts, microbially influenced corrosion, hydrogen embrittlement, batteries, supercapacitors, electrolysers and fuel cells (the same instrument runs cyclic voltammetry and charge–discharge tests).</li>
+<li><b>Errors</b>: uncompensated solution resistance (IR drop) in low-conductivity water, wrong exposed area, crevices at the specimen mount, sweeping too fast, assuming Tafel behaviour where there is none.</li></ul>
+</section>
+
+<!-- 10 salt spray -->
+<section class="sec prose" id="s10"><h2><span class="n">10</span>Salt spray cabinet</h2>
+<h3>Principle</h3>
+<p>A salt spray (salt fog) cabinet exposes coated or plated parts to a continuous fine mist of salt solution at a controlled temperature, to compare the corrosion resistance of coatings in a few days or weeks. The neutral salt spray test, <b>ASTM B117</b> and <b>ISO 9227</b> (NSS), is the most widely specified accelerated corrosion test in the world.</p>
+<div class="tablewrap"><table class="t"><thead><tr><th>ASTM B117 / ISO 9227 NSS condition</th><th>Value</th></tr></thead><tbody>
+<tr><td>Salt solution</td><td>5 ± 1% sodium chloride in pure water</td></tr>
+<tr><td>Solution pH (collected fog)</td><td>6.5 to 7.2</td></tr>
+<tr><td>Chamber temperature</td><td>35 ± 2 °C</td></tr>
+<tr><td>Fog collection rate</td><td>1.0 to 2.0 mL per hour per 80 cm² of horizontal area</td></tr>
+<tr><td>Specimen angle</td><td>15 to 30° from vertical</td></tr>
+</tbody></table></div>
+<h3>Procedure</h3>
+<ol><li>Clean the specimens as specified; for painted panels, cut a scribe through the coating to bare metal.</li>
+<li>Mask cut edges and contact points; place panels in racks at the specified angle so drips do not fall from one onto another.</li>
+<li>Check the collection rate and pH daily; record any interruptions.</li>
+<li>Expose for the specified hours (24, 96, 240, 500, 1,000 or more).</li>
+<li>Remove, rinse gently, dry, and rate: time to first white or red rust, blistering (ASTM D714), creep from the scribe in mm (ASTM D1654), rust grade (ISO 4628).</li></ol>
+<h3>Typical results and limits</h3>
+<p>Results are specified by each customer standard for its own coating system; a few examples of the kinds of requirement seen:</p>
+<ul><li>Zinc electroplating with passivation: often rated in tens to a few hundred hours to white rust, with requirements rising with zinc thickness and passivation type.</li>
+<li>Zinc–nickel plating for automotive fasteners: commonly specified in the range of several hundred to about 1,000 hours to red rust.</li>
+<li>Powder-coated or painted steel: often 500 to 1,000 hours with scribe creep limited to a few millimetres.</li></ul>
+<p class="note warn">Hours in a salt spray cabinet cannot be converted into years of service. Continuous wet salt fog does not reproduce wet–dry cycling, sunlight, or pollutants, and it ranks some coatings wrongly (it is particularly unrepresentative for zinc, whose protective layer needs drying cycles). Cyclic tests such as ASTM G85, SAE J2334 and ISO 12944-9 correlate better with outdoor exposure and are increasingly specified.</p>
+<h3>Uses in industry and research</h3>
+<ul><li><b>Industry</b>: quality control of plating and paint lines, supplier approval, automotive, aerospace, marine and electrical enclosure specifications.</li>
+<li><b>Research</b>: ranking new coatings and inhibitors, comparing surface treatments, combined with EIS and outdoor exposure sites to build service-life models.</li>
+<li><b>Errors</b>: incorrect fog rate or pH, contaminated salt, panels touching or dripping on each other, inconsistent scribing, subjective rating.</li></ul>
+</section>
+
+<section class="sec" id="quiz"><h2><span class="n">✓</span>Check yourself</h2><div id="qz"></div></section>
+
+<section class="sec refs" id="refs"><h2><span class="n"></span>References</h2>
+<p>ASTM International. (2018). <i>Standard test method for determination of additive elements, wear metals, and contaminants in used lubricating oils and determination of selected elements in base oils by inductively coupled plasma atomic emission spectrometry (ICP-AES)</i> (ASTM D5185-18). ASTM International.</p>
+<p>ASTM International. (2019). <i>Standard practice for operating salt spray (fog) apparatus</i> (ASTM B117-19). ASTM International.</p>
+<p>ASTM International. (2021). <i>Standard test method for kinematic viscosity of transparent and opaque liquids (and calculation of dynamic viscosity)</i> (ASTM D445-21). ASTM International.</p>
+<p>Duval, M. (2002). A review of faults detectable by gas-in-oil analysis in transformers. <i>IEEE Electrical Insulation Magazine, 18</i>(3), 8–17. https://doi.org/10.1109/MEI.2002.1014963</p>
+<p>Fitch, J. C. (2012). <i>Oil analysis basics</i> (2nd ed.). Noria Corporation.</p>
+<p>Harris, D. C., &amp; Lucy, C. A. (2016). <i>Quantitative chemical analysis</i> (9th ed.). W. H. Freeman.</p>
+<p>International Electrotechnical Commission. (2015). <i>Mineral oil-filled electrical equipment in service: Guidance on the interpretation of dissolved and free gases analysis</i> (IEC 60599:2015). IEC.</p>
+<p>Jones, D. A. (1996). <i>Principles and prevention of corrosion</i> (2nd ed.). Prentice Hall.</p>
+<p>Menczel, J. D., &amp; Prime, R. B. (Eds.). (2009). <i>Thermal analysis of polymers: Fundamentals and applications</i>. Wiley.</p>
+<p>Skoog, D. A., Holler, F. J., &amp; Crouch, S. R. (2018). <i>Principles of instrumental analysis</i> (7th ed.). Cengage Learning.</p>
+<p>Stern, M., &amp; Geary, A. L. (1957). Electrochemical polarization: I. A theoretical analysis of the shape of polarization curves. <i>Journal of the Electrochemical Society, 104</i>(1), 56–63.</p>
+<p>Totten, G. E. (Ed.). (2003). <i>Fuels and lubricants handbook: Technology, properties, performance, and testing</i>. ASTM International.</p></section>
+</main></div>
+<footer class="foot">Chemistry for mechanical engineers, laboratory instruments in detail, text CC BY 4.0, code MIT</footer>
+</div>
+<script src="assets/notes.js"></script>
+<script src="assets/instruments.js"></script>
+<script src="assets/slides.js"></script>
+</body>
+</html>

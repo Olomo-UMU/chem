@@ -1,0 +1,41 @@
+/* BME 1104 interactive notes: extra styles for the chemistry chapters */
+.twocol{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.twocol ul{margin:0}
+@media (max-width:900px){.twocol{grid-template-columns:minmax(0,1fr)}}
+.katex .mord.mathrm{font-style:normal}
+select{font:inherit;font-size:13px;padding:3px 6px;border:1px solid var(--rule);border-radius:3px;background:var(--paper);color:var(--text)}
+.btnrow label{font-size:13px;display:inline-flex;gap:6px;align-items:center}
+/* periodic table */
+.ptable{display:grid;grid-template-columns:repeat(18,minmax(0,1fr));gap:2px;padding:10px 12px;font-size:11px}
+.ptable .el{aspect-ratio:1/1.08;border:1px solid var(--rule);border-radius:2px;padding:1px 2px;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;background:var(--paper);color:var(--ink);min-width:0;overflow:hidden;font:inherit;text-align:left}
+.ptable .el .z{font-size:8.5px;color:var(--muted);line-height:1}
+.ptable .el .s{font-size:13px;font-weight:700;line-height:1;text-align:center}
+.ptable .el .v{font-size:8px;line-height:1;text-align:center;color:inherit;opacity:.85;white-space:nowrap}
+.ptable .el.on{outline:2px solid var(--ink);outline-offset:-1px}
+.ptable .gap{grid-column:span 1}
+.ptable .flabel{font-size:9px;color:var(--muted);display:flex;align-items:center;justify-content:flex-end;padding-right:3px}
+@media (max-width:700px){.ptable{gap:1px;padding:6px}.ptable .el .s{font-size:9.5px}.ptable .el .z,.ptable .el .v{display:none}}
+.pkey{display:flex;flex-wrap:wrap;gap:4px 12px;padding:6px 12px;font-size:12px;color:var(--muted);border-top:1px solid var(--grid)}
+.pkey span{display:inline-flex;align-items:center;gap:5px}.pkey i{width:12px;height:12px;border-radius:2px;display:inline-block;border:1px solid var(--rule)}
+/* orbital boxes */
+.oboxes{display:flex;flex-wrap:wrap;gap:12px 18px;padding:12px;align-items:flex-end}
+.osub{display:flex;flex-direction:column;align-items:center;gap:3px}
+.osub .row{display:flex}
+.osub .box{width:30px;height:34px;border:1.5px solid var(--ink);margin-left:-1.5px;display:flex;align-items:center;justify-content:center;gap:1px;font-size:17px;line-height:1;background:var(--paper)}
+.osub .box:first-child{margin-left:0}
+.osub .lab{font-size:12.5px;color:var(--muted)}
+.osub .up{color:var(--crank)}.osub .dn{color:var(--rod)}
+.osub.new .box.last{background:color-mix(in srgb,var(--crank) 12%,var(--paper))}
+.big{font-size:22px;color:var(--ink);padding:8px 12px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;padding:8px 12px;font-size:14px}
+.flow .st{border:1px solid var(--rule);border-radius:3px;padding:4px 10px;background:var(--paper)}
+.flow .ar{color:var(--muted)}
+.pill{display:inline-block;border:1px solid var(--rule);border-radius:999px;padding:0 8px;font-size:12px;color:var(--muted)}
+table.t td.num,table.t th.num{text-align:right}
+.atombox{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;padding:10px 12px;font-size:14px}
+.atombox .sym{font-size:44px;font-weight:700;color:var(--ink);line-height:1;text-align:center;padding:4px 10px;border:2px solid var(--ink);border-radius:4px;min-width:92px}
+.atombox .sym small{display:block;font-size:12px;font-weight:400;color:var(--muted)}
+.mono{font-variant-numeric:tabular-nums}
+.btnrow label{white-space:nowrap}
+.gl.tall{height:560px}.slidemode .gl.tall{height:min(560px,54vh)}.fsmode .gl.tall{height:min(700px,56vh)}html.printing .gl.tall{height:430px}
+.slidemode .ptable{max-width:600px;margin:0 auto}.slidemode .ptable .el .v{display:none}html.printing .ptable{max-width:600px;margin:0 auto}

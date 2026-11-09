@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="One interactive lecture on chemistry for mechanical engineers and the instruments used to make chemical measurements in the laboratory: combustion, corrosion, case hardening, calibration and Beer–Lambert analysis, pH measurement, bomb calorimetry and flue gas analysis.">
+<title>Chemistry for Mechanical Engineers</title>
+<link rel="stylesheet" href="assets/notes.css">
+<style>.pick{display:inline-flex;gap:8px;align-items:center;font-size:13.5px;margin-right:14px}.pick select{width:auto;min-width:150px}</style>
+</head>
+<body>
+<nav class="sitebar" aria-label="Site"><a href="../">All labs</a><a href="./" aria-current="page">Chemistry for mechanical engineers</a></nav>
+<div class="wrap">
+<header class="top">
+  <div class="eyebrow">Single lecture, about two hours</div>
+  <h1>Chemistry for Mechanical Engineers and Chemical Lab Instrumentation</h1>
+  <p>Engines, boilers, ships, bridges and gears all fail or succeed partly through chemistry. This lecture covers the reactions a mechanical engineer meets most often (burning fuel, metals corroding, carbon diffusing into steel) and then the instruments used to measure chemistry in the laboratory: how they work, how they are calibrated, and how much to trust their numbers.</p>
+</header>
+<div class="layout">
+<nav class="toc" aria-label="On this page"><ol>
+  <li><a href="#s1"><span class="n">1</span>Where chemistry meets machines</a></li>
+  <li><a href="#s2"><span class="n">2</span>Fuels and combustion</a></li>
+  <li><a href="#s3"><span class="n">3</span>Corrosion</a></li>
+  <li><a href="#s4"><span class="n">4</span>Surface hardening by diffusion</a></li>
+  <li><a href="#s5"><span class="n">5</span>Measurement basics and calibration</a></li>
+  <li><a href="#s6"><span class="n">6</span>The pH meter</a></li>
+  <li><a href="#s7"><span class="n">7</span>Calorimetry and gas analysis</a></li>
+  <li><a href="#s8"><span class="n">8</span>Other laboratory instruments</a></li>
+  <li><a href="#quiz"><span class="n">✓</span>Check yourself</a></li>
+  <li><a href="#refs"><span class="n"></span>References</a></li>
+</ol></nav>
+<main>
+
+<section class="sec prose" id="s1"><h2><span class="n">1</span>Where chemistry meets machines</h2>
+<p>A mechanical engineer does not need to be a chemist, but needs enough chemistry to design for it, specify materials and treatments, and read a laboratory report critically. Learning outcomes for this lecture:</p>
+<ul><li>Balance a combustion reaction, find the air–fuel ratio, flue gas composition and flame temperature.</li>
+<li>Explain corrosion as an electrochemical cell and estimate a corrosion rate from current with Faraday's law.</li>
+<li>Use Fick's second law to estimate case depth in carburising.</li>
+<li>Build and use a calibration curve, and state detection limits and uncertainty.</li>
+<li>Describe how a pH meter, bomb calorimeter and flue gas analyser work, and their main sources of error.</li></ul>
+<div class="tablewrap"><table class="t"><thead><tr><th>Area</th><th>The chemistry</th><th>Mechanical engineering examples</th></tr></thead><tbody>
+<tr><td>Energy conversion</td><td>Combustion, oxidation, heat of reaction</td><td>Engines, gas turbines, boilers, furnaces, emissions control</td></tr>
+<tr><td>Materials and degradation</td><td>Electrochemistry, oxidation, hydrogen embrittlement</td><td>Corrosion of pipes, hulls, bolts and reinforcing steel; high-temperature oxidation of turbine blades</td></tr>
+<tr><td>Heat treatment and surfaces</td><td>Diffusion, phase changes, coatings</td><td>Carburising and nitriding gears, galvanising, electroplating, painting</td></tr>
+<tr><td>Tribology</td><td>Hydrocarbon chemistry, additives, oxidation</td><td>Lubricant selection, oil degradation, wear-metal analysis for condition monitoring</td></tr>
+<tr><td>Water and steam</td><td>Hardness, pH, dissolved oxygen</td><td>Boiler scale and pitting, cooling towers, feedwater treatment</td></tr>
+<tr><td>Polymers and composites</td><td>Polymerisation, curing</td><td>Seals, adhesives, fibre-reinforced parts, curing cycles</td></tr>
+<tr><td>Storage and conversion</td><td>Redox reactions in cells</td><td>Batteries for electric vehicles and solar systems, fuel cells, electrolysers</td></tr>
+</tbody></table></div>
+</section>
+
+<section class="sec prose" id="s2"><h2><span class="n">2</span>Fuels and combustion</h2>
+<h3>Stoichiometry and air–fuel ratio</h3>
+<p>Air is taken as 21% O<sub>2</sub> and 79% N<sub>2</sub> by volume, so each kmol of O<sub>2</sub> brings 3.76 kmol of N<sub>2</sub>. For a fuel C<sub>x</sub>H<sub>y</sub>O<sub>z</sub> burned completely with a fraction e of excess air:</p>
+<div class="eq"><div>C<sub>x</sub>H<sub>y</sub>O<sub>z</sub> + (1 + e)a<sub>st</sub>(O<sub>2</sub> + 3.76N<sub>2</sub>) ⟶ x CO<sub>2</sub> + (y/2) H<sub>2</sub>O + e a<sub>st</sub> O<sub>2</sub> + 3.76(1 + e)a<sub>st</sub> N<sub>2</sub>, &nbsp; a<sub>st</sub> = x + y/4 − z/2</div><div class="w">The air–fuel ratio by mass is AFR = 4.76(1 + e)a<sub>st</sub> × 28.97 / M<sub>fuel</sub>. Petrol needs about 15 kg of air per kg of fuel. Real burners run with some excess air so that all the fuel meets oxygen; too much excess air just heats nitrogen and carries energy up the chimney. The equivalence ratio φ = 1/(1 + e) and lambda λ = 1 + e are the same idea in other words.</div></div>
+<h3>Heating value and flame temperature</h3>
+<p>The <b>higher heating value</b> (HHV) counts the heat released when the water in the products condenses; the <b>lower heating value</b> (LHV) assumes it leaves as vapour. Engines and most boilers cannot recover that latent heat, so LHV is the usual basis; condensing boilers get part of the difference back by cooling the flue gas below its dew point. The <b>adiabatic flame temperature</b> is the product temperature if all the heat goes into the products: it sets NO<sub>x</sub> formation and the thermal load on combustor walls.</p>
+<div class="eq"><div>LHV × M<sub>fuel</sub> + Σ n<sub>air</sub>Δh(T<sub>air</sub>) = Σ n<sub>i</sub> Δh<sub>i</sub>(T<sub>ad</sub>) &nbsp;&nbsp; (per kmol of fuel; Δh from ideal-gas tables)</div><div class="w">The calculator solves this for T<sub>ad</sub> with tabulated enthalpies, assuming complete combustion and no dissociation, so it overestimates real flame temperatures above about 2,000 K by 50 to 150 K.</div></div>
+<div class="panel"><div class="ph"><h4>Combustion calculator</h4><span class="sub" id="cb_sub"></span></div>
+  <div class="btnrow"><span class="seg" id="cb_seg" role="group" aria-label="Fuel"><button type="button" data-v="CH4" aria-pressed="true">Methane</button><button type="button" data-v="C3H8">Propane</button><button type="button" data-v="C8H18">Octane</button><button type="button" data-v="C12H23">Diesel</button><button type="button" data-v="C2H6O">Ethanol</button><button type="button" data-v="H2">Hydrogen</button></span></div>
+  <div class="figrow"><canvas class="cv" id="cb" aria-label="Adiabatic flame temperature against excess air"></canvas><canvas class="cv" id="cb_g" aria-label="Dry flue gas oxygen and carbon dioxide against excess air"></canvas></div>
+  <div class="controls" id="cb_c"></div><div class="stats" id="cb_st"></div></div>
+<details class="ex" id="ex1"></details>
+</section>
+
+<section class="sec prose" id="s3"><h2><span class="n">3</span>Corrosion</h2>
+<h3>Corrosion is an electrochemical cell</h3>
+<p>Metal corrodes when it is the <b>anode</b> of a cell: atoms give up electrons and leave as ions (Fe ⟶ Fe<sup>2+</sup> + 2e<sup>−</sup>). Those electrons are consumed at a <b>cathode</b>, usually by dissolved oxygen (O<sub>2</sub> + 2H<sub>2</sub>O + 4e<sup>−</sup> ⟶ 4OH<sup>−</sup>) or, in acids, by hydrogen evolution. A cell needs four things: anode, cathode, an electrolyte (water, soil, condensate) and a metallic path. Remove any one and corrosion stops; every protection method attacks one of them.</p>
+<div class="eq"><div>Faraday's law: m = I t M/(n F), &nbsp; corrosion rate CR [mm/year] = 3.27 × 10<sup>−3</sup> × i [μA/cm²] × EW / ρ [g/cm³]</div><div class="w">F = 96,485 C/mol, n = electrons per atom, EW = M/n the equivalent weight. For steel, 1 μA/cm² is about 0.012 mm per year. Because corrosion is a current, it can be measured electrically (linear polarisation resistance probes) and stopped electrically (cathodic protection).</div></div>
+<h3>Galvanic corrosion</h3>
+<p>When two different metals touch in an electrolyte, the one lower in the <b>galvanic series</b> becomes the anode and corrodes faster, while the other is protected. In seawater and other neutral waters the cathode reaction is usually limited by how fast oxygen can reach the surface, so the total cathodic current is proportional to the <b>cathode area</b>, and it all comes out of the anode. A small anode coupled to a large cathode (a steel rivet in a copper sheet) is the worst case; the reverse (copper rivets in a steel plate) is tolerable.</p>
+<div class="panel"><div class="ph"><h4>Galvanic couple in seawater</h4><span class="sub" id="gc_sub"></span></div>
+  <div class="btnrow"><label class="pick">Metal A <select id="gc_a"></select></label><label class="pick">Metal B <select id="gc_b"></select></label></div>
+  <div class="figrow"><canvas class="cv" id="gc" aria-label="Galvanic series with the two chosen metals marked"></canvas><canvas class="cv" id="gc_r" aria-label="Corrosion rate of the anode against cathode to anode area ratio"></canvas></div>
+  <div class="controls" id="gc_c"></div><div class="stats" id="gc_st"></div></div>
+<h3>Protection</h3>
+<ul><li><b>Design</b>: avoid dissimilar metals in contact, or insulate them; keep anodes large; avoid crevices and water traps; allow drainage.</li>
+<li><b>Barriers</b>: paint, polymer coatings, galvanising (zinc also protects sacrificially where scratched).</li>
+<li><b>Cathodic protection</b>: make the whole structure a cathode, with sacrificial zinc, aluminium or magnesium anodes (ships, small pipelines) or an impressed current from a rectifier (long pipelines, jetties).</li>
+<li><b>Environment</b>: remove oxygen from boiler feedwater, control pH, add inhibitors.</li>
+<li><b>Material choice</b>: stainless steels and titanium form passive oxide films; they are excellent until the film breaks down in chloride crevices.</li></ul>
+<details class="ex" id="ex2"></details>
+</section>
+
+<section class="sec prose" id="s4"><h2><span class="n">4</span>Surface hardening by diffusion</h2>
+<p>Gears, camshafts and bearing races need a hard, wear-resistant surface over a tough core. <b>Carburising</b> heats low-carbon steel to about 900 to 950 °C in a carbon-rich atmosphere; carbon diffuses in, and quenching then turns the high-carbon case to hard martensite. Nitriding does the same with nitrogen at lower temperature. Diffusion into a thick part from a surface held at constant concentration follows Fick's second law:</p>
+<div class="eq"><div>(C<sub>x</sub> − C<sub>0</sub>)/(C<sub>s</sub> − C<sub>0</sub>) = 1 − erf(x / 2√(Dt)), &nbsp; D = D<sub>0</sub> exp(−Q<sub>d</sub>/RT)</div><div class="w">For carbon in austenite, D<sub>0</sub> = 2.3 × 10<sup>−5</sup> m²/s and Q<sub>d</sub> = 148 kJ/mol (Callister &amp; Rethwisch, 2018). Case depth grows only with √t, so doubling the depth takes four times as long; raising the temperature is far more effective because D rises exponentially.</div></div>
+<div class="panel"><div class="ph"><h4>Carbon profile after carburising</h4><span class="sub" id="cz_sub"></span></div>
+  <div class="figrow"><canvas class="cv" id="cz" aria-label="Carbon content against depth"></canvas><canvas class="cv" id="cz_t" aria-label="Case depth against time at several temperatures"></canvas></div>
+  <div class="controls" id="cz_c"></div><div class="stats" id="cz_st"></div></div>
+<details class="ex" id="ex3"></details>
+</section>
+
+<section class="sec prose" id="s5"><h2><span class="n">5</span>Measurement basics and calibration</h2>
+<h3>What a chemical measurement needs</h3>
+<p>Most chemical instruments measure a voltage, a light intensity, a temperature rise or a current that depends on concentration. A <b>calibration</b> against standards of known composition turns that signal into a result.</p>
+<div class="tablewrap"><table class="t"><thead><tr><th>Term</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Accuracy</td><td>Closeness to the true value. Its opposite is bias.</td></tr>
+<tr><td>Precision</td><td>Closeness of repeated readings to each other. A precise instrument can still be inaccurate.</td></tr>
+<tr><td>Sensitivity</td><td>Slope of signal against concentration.</td></tr>
+<tr><td>Selectivity</td><td>How little other substances interfere with the reading.</td></tr>
+<tr><td>Limit of detection (LOD)</td><td>Smallest concentration distinguishable from a blank, commonly 3.3 s/m (s: residual standard deviation, m: slope). The limit of quantification is 10 s/m.</td></tr>
+<tr><td>Traceability</td><td>Standards and instruments calibrated through an unbroken chain to national or international references.</td></tr>
+<tr><td>Uncertainty</td><td>A stated range within which the true value lies with a given confidence, combining every source of error.</td></tr>
+</tbody></table></div>
+<h3>Absorption spectrophotometry and the calibration curve</h3>
+<p>A UV–visible spectrophotometer passes light of one wavelength through a sample and measures the transmitted fraction T = I/I<sub>0</sub>. The absorbance follows the <b>Beer–Lambert law</b>, which is linear in concentration over a limited range:</p>
+<div class="eq"><div>A = −log<sub>10</sub>T = ε b c</div><div class="w">ε is the molar absorptivity, b the path length (usually 1 cm) and c the concentration. Stray light reaching the detector makes the curve bend over at high absorbance, so samples above about A = 1 should be diluted. The same law underlies infrared gas analysers (section 7).</div></div>
+<div class="panel"><div class="ph"><h4>Calibration curve with linear regression</h4><span class="sub" id="cl_sub"></span></div>
+  <div class="figrow"><canvas class="cv" id="cl" aria-label="Absorbance against concentration for the standards with the fitted line"></canvas><canvas class="cv" id="cl_r" aria-label="Residuals of the fit"></canvas></div>
+  <div class="btnrow"><button type="button" id="cl_new">Measure the standards again</button></div>
+  <div class="controls" id="cl_c"></div><div class="stats" id="cl_st"></div></div>
+</section>
+
+<section class="sec prose" id="s6"><h2><span class="n">6</span>The pH meter</h2>
+<p>pH = −log<sub>10</sub>a<sub>H<sup>+</sup></sub> controls corrosion, scaling and the life of coolants and lubricants. A pH meter is a high-impedance voltmeter connected to a <b>glass electrode</b>, whose thin glass membrane develops a potential that depends on the hydrogen ion activity outside it, and a <b>reference electrode</b> (usually silver/silver chloride) that holds a constant potential. The cell voltage follows the Nernst equation:</p>
+<div class="eq"><div>E = E<sub>0</sub> − k (2.303RT/F)(pH − 7), &nbsp; 2.303RT/F = 59.16 mV per pH at 25 °C</div></div>
+<p>The ideal slope changes with temperature (54.2 mV/pH at 0 °C, 64.1 at 50 °C), so meters use a temperature probe for automatic temperature compensation (ATC). Real electrodes have an offset (asymmetry potential) and a slope efficiency k below 100% that worsen with age; a two-point calibration with buffers measures both. Meters typically ask for the electrode to be cleaned or replaced when the slope falls below about 95% or the offset exceeds about ±30 mV. ATC corrects only the electrode slope, not the real change of the sample's own pH with temperature.</p>
+<div class="panel"><div class="ph"><h4>Two-point calibration and temperature compensation</h4><span class="sub" id="ph_sub"></span></div>
+  <canvas class="cv" id="ph" aria-label="Electrode voltage against pH with the meter's calibration line"></canvas>
+  <div class="btnrow"><label class="checks"><input type="checkbox" id="ph_atc" checked> Automatic temperature compensation</label></div>
+  <div class="controls" id="ph_c"></div><div class="stats" id="ph_st"></div></div>
+</section>
+
+<section class="sec prose" id="s7"><h2><span class="n">7</span>Calorimetry and gas analysis</h2>
+<h3>The bomb calorimeter</h3>
+<p>The heating value of a solid or liquid fuel is measured in an oxygen <b>bomb calorimeter</b> (ASTM D240 for liquid fuels, ISO 1928 for solid fuels). A weighed sample burns in pure oxygen at about 30 bar inside a steel vessel immersed in a known mass of water; the water temperature rise gives the heat released. The calorimeter's energy equivalent C (J/K) is found first by burning certified <b>benzoic acid</b>, whose heat of combustion is 26.454 MJ/kg. Because the products cool back to near room temperature and the water condenses, the bomb measures the <b>gross</b> (higher) heating value at constant volume; corrections are made for the ignition wire and for nitric and sulfuric acid formed.</p>
+<div class="eq"><div>C = (m<sub>BA</sub> × 26,454 + e<sub>wire</sub>)/ΔT<sub>cal</sub>, &nbsp; HHV = (C ΔT − e<sub>wire</sub> − e<sub>acid</sub>)/m, &nbsp; LHV ≃ HHV − 2.442 × 9 w<sub>H</sub> MJ/kg</div><div class="w">w<sub>H</sub> is the mass fraction of hydrogen in the fuel: each kg of hydrogen makes 9 kg of water, and 2.442 MJ/kg is the latent heat of water at 25 °C.</div></div>
+<details class="ex" id="ex4"></details>
+<h3>Flue gas analysers</h3>
+<p>Boiler and engine tuning rely on measuring the exhaust. From the measured O<sub>2</sub>, a flue gas analyser works out excess air and CO<sub>2</sub>, and estimates the flue gas loss with the Siegert formula:</p>
+<div class="eq"><div>λ ≃ 21/(21 − O<sub>2</sub>), &nbsp; CO<sub>2</sub> = CO<sub>2,max</sub>(1 − O<sub>2</sub>/21), &nbsp; q<sub>A</sub> = (T<sub>flue</sub> − T<sub>air</sub>)(A<sub>2</sub>/(21 − O<sub>2</sub>) + B) %</div><div class="w">O<sub>2</sub> and CO<sub>2</sub> are on a dry basis because the water was removed. A<sub>2</sub> and B are fuel constants. The formula gives the sensible heat loss on a net-calorific-value basis; it ignores the latent heat in the water vapour, which is why it can say a condensing boiler is over 100% efficient on an LHV basis.</div></div>
+<p>Portable analysers draw a sample through a heated probe, cool and dry it, and pass it over sensors: electrochemical cells for O<sub>2</sub>, CO and NO, a thermocouple for flue temperature, and often an infrared cell for CO<sub>2</sub>. Electrochemical cells drift and are poisoned over time, so they are checked against certified test gases, typically every year. Laboratory and emissions-monitoring systems use non-dispersive infrared (NDIR) for CO and CO<sub>2</sub>, paramagnetic or zirconia sensors for O<sub>2</sub>, chemiluminescence for NO<sub>x</sub> and flame ionisation for hydrocarbons.</p>
+<div class="panel"><div class="ph"><h4>Flue gas analyser reading</h4><span class="sub" id="fg_sub"></span></div>
+  <div class="btnrow"><span class="seg" id="fg_seg" role="group" aria-label="Fuel"><button type="button" data-v="ng" aria-pressed="true">Natural gas</button><button type="button" data-v="oil">Light fuel oil</button><button type="button" data-v="lpg">LPG</button></span></div>
+  <div class="figrow"><canvas class="cv" id="fg" aria-label="Flue gas loss against oxygen content"></canvas><canvas class="cv" id="fg_g" aria-label="Analyser display"></canvas></div>
+  <div class="controls" id="fg_c"></div><div class="stats" id="fg_st"></div></div>
+</section>
+
+<section class="sec prose" id="s8"><h2><span class="n">8</span>Other laboratory instruments</h2>
+<p>A mechanical engineering laboratory, or the chemistry lab that serves it, uses a wide range of instruments. The ones you are most likely to meet are summarised here. <a href="instruments.html">Laboratory instruments in detail</a> covers each one with its procedure, typical results and interactive examples.</p>
+<div class="tablewrap"><table class="t"><thead><tr><th>Instrument</th><th>Measures</th><th>Principle</th><th>Typical use</th></tr></thead><tbody>
+<tr><td>Kinematic viscometer, rotational viscometer</td><td>Viscosity</td><td>Time to flow through a capillary; torque on a spinning spindle</td><td>Lubricant grade and degradation (ISO VG, ASTM D445)</td></tr>
+<tr><td>Conductivity meter</td><td>Dissolved ions</td><td>AC current between electrodes, temperature compensated</td><td>Boiler water, cooling water, condensate purity</td></tr>
+<tr><td>Titration (manual or automatic)</td><td>Acidity, alkalinity, hardness</td><td>Reagent volume to an end point (indicator or electrode)</td><td>Total base number of engine oil, water hardness</td></tr>
+<tr><td>Karl Fischer titrator</td><td>Water content (ppm)</td><td>Reaction of iodine with water, coulometric or volumetric</td><td>Water in transformer and hydraulic oils</td></tr>
+<tr><td>AAS and ICP-OES spectrometers</td><td>Metals (ppm)</td><td>Light absorbed or emitted by atoms in a flame or plasma</td><td>Wear metals in used oil for machine condition monitoring</td></tr>
+<tr><td>FTIR spectrometer</td><td>Chemical bonds</td><td>Infrared absorption spectrum</td><td>Oil oxidation and soot, polymer identification</td></tr>
+<tr><td>Gas chromatograph</td><td>Mixture composition</td><td>Separation in a column, then a detector (FID, TCD)</td><td>Fuel and natural gas composition, transformer oil gases</td></tr>
+<tr><td>Thermogravimetric analyser, DSC</td><td>Mass and heat flow against temperature</td><td>Precision balance or heat-flux sensor in a programmed furnace</td><td>Moisture, ash and volatiles of fuels; polymer curing and glass transition</td></tr>
+<tr><td>Potentiostat</td><td>Corrosion current, potential</td><td>Controlled polarisation of a metal sample</td><td>Corrosion rates, coating tests, battery research</td></tr>
+<tr><td>Salt spray cabinet</td><td>Coating durability</td><td>Accelerated exposure to salt fog (ASTM B117)</td><td>Comparing paints and platings</td></tr>
+</tbody></table></div>
+<h3>Good practice in the lab</h3>
+<ul><li>Calibrate before use with standards that bracket the samples, and check with an independent control standard.</li>
+<li>Record temperature: almost every chemical measurement depends on it.</li>
+<li>Run blanks and replicates; report the mean with its uncertainty and the number of readings.</li>
+<li>Sample correctly: a perfect analysis of an unrepresentative sample is worthless (take oil from a running system, not the bottom of the sump).</li>
+<li>Read the safety data sheet for every reagent; wear eye protection; handle oxygen bombs, acids and flammable solvents as the procedure requires.</li></ul>
+</section>
+
+<section class="sec" id="quiz"><h2><span class="n">✓</span>Check yourself</h2><div id="qz"></div></section>
+
+<section class="sec refs" id="refs"><h2><span class="n"></span>References</h2>
+<p>ASTM International. (2019). <i>Standard test method for heat of combustion of liquid hydrocarbon fuels by bomb calorimeter</i> (ASTM D240-19). ASTM International.</p>
+<p>Callister, W. D., &amp; Rethwisch, D. G. (2018). <i>Materials science and engineering: An introduction</i> (10th ed.). Wiley.</p>
+<p>Çengel, Y. A., &amp; Boles, M. A. (2015). <i>Thermodynamics: An engineering approach</i> (8th ed.). McGraw-Hill Education.</p>
+<p>Fontana, M. G. (1986). <i>Corrosion engineering</i> (3rd ed.). McGraw-Hill.</p>
+<p>Harris, D. C., &amp; Lucy, C. A. (2016). <i>Quantitative chemical analysis</i> (9th ed.). W. H. Freeman.</p>
+<p>Jones, D. A. (1996). <i>Principles and prevention of corrosion</i> (2nd ed.). Prentice Hall.</p>
+<p>Skoog, D. A., Holler, F. J., &amp; Crouch, S. R. (2018). <i>Principles of instrumental analysis</i> (7th ed.). Cengage Learning.</p>
+<p>Turns, S. R. (2012). <i>An introduction to combustion: Concepts and applications</i> (3rd ed.). McGraw-Hill.</p></section>
+</main></div>
+<footer class="foot">Chemistry for mechanical engineers, interactive lecture, text CC BY 4.0, code MIT</footer>
+</div>
+<script src="assets/notes.js"></script>
+<script src="assets/chem.js"></script>
+<script src="assets/slides.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Chemistry for Mechanical Engineers (BME 1104): interactive notes for all ten chapters with 3D molecules, crystals and laboratory apparatus, and a single lecture on combustion, corrosion and chemical instrumentation.">
+<title>Chemistry for Mechanical Engineers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: index sheet for the lab set. Header, then a two-column grid of lab cards with live screenshots, then how-to-use notes. */
+:root {
+  --paper: #eceff3; --sheet: #fbfcfd; --ink: #15212c; --muted: #5b6977; --rule: #cdd5dd; --grid: #e3e8ed;
+  --accent: #1d5bbd; --focus: #1d5bbd;
+  --f-display: "IBM Plex Sans Condensed", "Arial Narrow", Arial, sans-serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --paper: #0e1318; --sheet: #151c24; --ink: #e2e8ee; --muted: #93a1ae; --rule: #2b3641; --grid: #1f2830; --accent: #72a6ff; --focus: #72a6ff; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.55; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 36px 48px; display: grid; gap: 28px; }
+header { display: grid; gap: 8px; }
+.eyebrow { font-family: var(--f-mono); font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: 2.3rem; line-height: 1.1; margin: 0; text-wrap: balance; }
+header p { margin: 0; color: var(--muted); max-width: 68ch; }
+h2 { font-family: var(--f-display); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.09em; color: var(--muted); margin: 0 0 10px; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card { display: grid; grid-template-rows: auto 1fr; background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; color: inherit; text-decoration: none; transition: border-color .15s, transform .15s; }
+.card:hover { border-color: var(--muted); transform: translateY(-2px); }
+.card:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-bottom: 1px solid var(--rule); background: var(--grid); }
+.card .body { padding: 14px 16px 16px; display: grid; gap: 6px; align-content: start; }
+.card .topic { font-family: var(--f-mono); font-size: 0.76rem; color: var(--muted); }
+.card h3 { font-family: var(--f-display); font-weight: 600; font-size: 1.3rem; margin: 0; }
+.card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+.card .go { font-family: var(--f-display); font-weight: 600; font-size: 0.85rem; color: var(--accent); letter-spacing: 0.04em; margin-top: 4px; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.note { background: var(--sheet); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.note ul { margin: 0; padding-left: 1.1em; }
+.note li { margin: 3px 0; }
+.note p { margin: 0 0 6px; }
+code { font-family: var(--f-mono); font-size: 0.86em; }
+a { color: var(--accent); }
+footer { color: var(--muted); font-size: 0.82rem; }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 1.9rem; } }
+@media (max-width: 420px) { .wrap { padding-inline: 16px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="eyebrow">BME 1104, Uganda Martyrs University</span>
+    <h1>Chemistry for Mechanical Engineers</h1>
+    <p>Interactive chemistry for mechanical engineering students. Turn molecules, crystals and laboratory apparatus in 3D, change the numbers in worked examples, and run the simulations in class. Everything works in a browser, with nothing to install.</p>
+  </header>
+
+  <section>
+    <h2>Course material</h2>
+    <div class="grid">
+      <a class="card" href="bme1104/">
+        <img src="img/bme1104.jpg" alt="3D sodium chloride unit cell from the BME 1104 interactive notes" width="640" height="360">
+        <div class="body">
+          <span class="topic">BME 1104 interactive notes</span>
+          <h3>Chapters 1 to 10</h3>
+          <p>The whole course as slide decks with molecules, crystals and lab apparatus in 3D, live simulations, worked examples and self-checks: materials, atoms, bonding, equilibrium and pH, electrochemistry, solids, carbon compounds, polymers, fuels and applications.</p>
+          <span class="go">Open notes</span>
+        </div>
+      </a>
+      <a class="card" href="chemistry/">
+        <img src="img/lecture.jpg" alt="Adiabatic flame temperature against excess air from the chemistry lecture" width="640" height="360">
+        <div class="body">
+          <span class="topic">Single lecture</span>
+          <h3>Chemistry for Mechanical Engineers and Lab Instrumentation</h3>
+          <p>Combustion, corrosion and carburising, then calibration, the pH meter, bomb calorimetry and flue gas analysis, with live calculators and worked examples.</p>
+          <span class="go">Open lecture</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="notes">
+    <div class="note">
+      <h2>Using the notes</h2>
+      <ul>
+        <li>Each chapter opens as 16:9 slides: Space or the right arrow key for the next slide, the left arrow key to go back.</li>
+        <li>Choose <strong>Page view</strong> to read a chapter as one scrolling page, which suits a phone.</li>
+        <li><strong>Export PDF</strong> prints every slide on its own page.</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h2>Other courses</h2>
+      <ul>
+        <li><a href="https://olomo-umu.github.io/mechanics-labs/">Mechanics of Machines I and II</a></li>
+        <li><a href="https://olomo-umu.github.io/power-systems-course/">Power Systems and Clean Energy Integration</a></li>
+        <li><a href="https://olomo-umu.github.io/solar-installer-training/">Solar Installer Training</a></li>
+        <li><a href="https://olomo-umu.github.io/uganda-electricity-atlas/">Uganda Electricity Atlas</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>Text CC BY 4.0, code MIT. Equations by KaTeX with mhchem (MIT), 3D by three.js (MIT). References are listed at the end of each chapter (APA style).</footer>
+</div>
+</body>
+</html>
